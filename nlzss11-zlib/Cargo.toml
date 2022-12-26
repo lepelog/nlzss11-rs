@@ -1,6 +1,6 @@
 [package]
 name = "nlzss11-zlib"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 description = "Nintendo's LZSS algorithm found in Skyward Sword, compression with zlib-ng"
 license = "MIT"

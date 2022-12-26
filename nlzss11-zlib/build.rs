@@ -1,5 +1,5 @@
 fn main() {
-    let mut cmake = cmake::Config::new("zlib-ng");
+    let mut cmake = cmake::Config::new("src/zlib-ng");
     cmake.define("BUILD_SHARED_LIBS", "OFF")
     .define("ZLIB_COMPAT", "OFF")
     .define("ZLIB_ENABLE_TESTS", "OFF")
@@ -7,8 +7,8 @@ fn main() {
     let install_dir = cmake.build();
     let libdir = install_dir.join("lib");
     println!(
-        "cargo:rustc-link-search={}",
-        libdir.to_str().unwrap()
+        "cargo:rustc-link-search=native={}",
+        libdir.display()
     );
     let target = std::env::var("TARGET").unwrap();
     let libname = if target.contains("windows") && target.contains("msvc") {
@@ -17,7 +17,7 @@ fn main() {
         "zlib"
     };
     println!(
-        "cargo:rustc-link-lib={}",
+        "cargo:rustc-link-lib=static={}",
         libname
     );
 }
