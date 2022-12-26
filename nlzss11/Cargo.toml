@@ -2,6 +2,9 @@
 name = "nlzss11"
 version = "1.0.0"
 edition = "2021"
+description = "Nintendo's LZSS algorithm found in Skyward Sword"
+license = "MIT"
+repository = "https://github.com/lepelog/nlzss11-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
