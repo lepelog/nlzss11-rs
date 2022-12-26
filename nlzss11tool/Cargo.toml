@@ -9,3 +9,6 @@ edition = "2021"
 clap = { version = "3.2.8", features = ["derive"] }
 nlzss11 = { path = "../nlzss11" }
 thiserror = "1.0.38"
+
+[features]
+zlib = ["nlzss11/zlib"]

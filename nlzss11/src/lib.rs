@@ -190,6 +190,16 @@ impl MatchSearcher {
 const TOTAL_BACKREF_LEN: u32 = 0x10110;
 const TOTAL_BACKREF_POS: u32 = 0xFFF;
 
+#[cfg(feature = "zlib")]
+pub use nlzss11_zlib::compress_with_zlib_into;
+#[cfg(feature = "zlib")]
+pub fn compress(data: &[u8]) -> Vec<u8> {
+    let mut out = Vec::with_capacity(data.len());
+    compress_with_zlib_into(data, &mut out, 7);
+    out
+}
+
+#[cfg(not(feature = "zlib"))]
 pub fn compress(data: &[u8]) -> Vec<u8> {
     let mut searcher = MatchSearcher::new();
 

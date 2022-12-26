@@ -11,3 +11,7 @@ repository = "https://github.com/lepelog/nlzss11-rs"
 [dependencies]
 byteorder = "1.4.3"
 thiserror = "1.0.38"
+nlzss11-zlib = { path = "../nlzss11-zlib", optional = true}
+
+[features]
+zlib = ["nlzss11-zlib"]

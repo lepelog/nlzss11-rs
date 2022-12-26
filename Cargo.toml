@@ -1,2 +1,2 @@
 [workspace]
-members = ["nlzss11", "nlzss11tool"]
+members = ["nlzss11", "nlzss11-zlib", "nlzss11tool"]
